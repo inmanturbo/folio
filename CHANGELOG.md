@@ -1,6 +1,19 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/folio/compare/v1.1.3...master)
+## [Unreleased](https://github.com/laravel/folio/compare/v1.1.6...master)
+
+## [v1.1.6](https://github.com/laravel/folio/compare/v1.1.5...v1.1.6) - 2024-02-12
+
+* [1.x] Fixes routing when slug starts with `index` by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/folio/pull/133
+
+## [v1.1.5](https://github.com/laravel/folio/compare/v1.1.4...v1.1.5) - 2023-12-12
+
+* [1.x] Finish L11 support by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/folio/pull/126
+* [1.x] Adds missing URI on `folio:list` command by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/folio/pull/127
+
+## [v1.1.4](https://github.com/laravel/folio/compare/v1.1.3...v1.1.4) - 2023-10-18
+
+- Fixed named routes resolution by [@zupolgec](https://github.com/zupolgec) in https://github.com/laravel/folio/pull/122
 
 ## [v1.1.3](https://github.com/laravel/folio/compare/v1.1.2...v1.1.3) - 2023-10-09
 

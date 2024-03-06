@@ -14,7 +14,7 @@ class FolioManager
     /**
      * The mounted paths that have been registered.
      *
-     * @var  array<int, \Laravel\Folio\MountPath>
+     * @var array<int, \Laravel\Folio\MountPath>
      */
     protected array $mountPaths = [];
 
@@ -40,7 +40,7 @@ class FolioManager
      *
      * @throws \InvalidArgumentException
      */
-    public function route(string $path = null, ?string $uri = '/', array $middleware = []): PendingRoute
+    public function route(?string $path = null, ?string $uri = '/', array $middleware = []): PendingRoute
     {
         return new PendingRoute(
             $this,
@@ -117,7 +117,7 @@ class FolioManager
     /**
      * Get a piece of data from the route / view that was last matched by Folio.
      */
-    public function data(string $key = null, mixed $default = null): mixed
+    public function data(?string $key = null, mixed $default = null): mixed
     {
         return Arr::get($this->lastMatchedView?->data ?: [], $key, $default);
     }
@@ -125,7 +125,7 @@ class FolioManager
     /**
      * Specify the callback that should be used to render matched views.
      */
-    public function renderUsing(Closure $callback = null): static
+    public function renderUsing(?Closure $callback = null): static
     {
         $this->renderUsing = $callback;
 
@@ -149,7 +149,7 @@ class FolioManager
     /**
      * Specify the callback that should be used when terminating the application.
      */
-    public function terminateUsing(Closure $callback = null): static
+    public function terminateUsing(?Closure $callback = null): static
     {
         $this->terminateUsing = $callback;
 
@@ -159,7 +159,7 @@ class FolioManager
     /**
      * Get the array of mounted paths that have been registered.
      *
-     * @return  array<int, \Laravel\Folio\MountPath>
+     * @return array<int, \Laravel\Folio\MountPath>
      */
     public function mountPaths(): array
     {
@@ -169,7 +169,7 @@ class FolioManager
     /**
      * Get the mounted directory paths as strings.
      *
-     * @return  array<int, string>
+     * @return array<int, string>
      */
     public function paths(): array
     {

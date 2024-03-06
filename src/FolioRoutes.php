@@ -155,7 +155,7 @@ class FolioRoutes
      * Get the relative route URL for the given route name and arguments.
      *
      * @param  array<string, mixed>  $parameters
-     * @return  array{string, array<string, mixed>}
+     * @return array{string, array<string, mixed>}
      */
     protected function path(string $mountPath, string $path, array $parameters): array
     {
@@ -192,7 +192,11 @@ class FolioRoutes
                 );
             })->implode('/');
 
-        $uri = str_replace(['/index', '/index/'], ['', '/'], $uri);
+        $uri = match (true) {
+            str_ends_with($uri, '/index') => substr($uri, 0, -6),
+            str_ends_with($uri, '/index/') => substr($uri, 0, -7),
+            default => $uri,
+        };
 
         return [
             '/'.ltrim(substr($uri, strlen($mountPath)), '/'),
